@@ -8,12 +8,11 @@
       //Whatever you put on the controller scope,
       //will be availalble in the HTML element bound to the controller.
       function MyController($scope){
-        $scope.newMessage = "Hi";
-        $scope.altmessages = "Bye";
-        $scope.messages = ["What's up?", "Yo!"]; 
+        $scope.newMessage = "Slack";
+        $scope.messages = ["IB", "Ethics"]; 
         
         $scope.add = function(){
-          $scope.messages.push($scope.altmessages);
+          $scope.messages.push($scope.newMessage);
         };
       }
     </script>
@@ -21,13 +20,11 @@
   
   <body ng-controller="MyController">
     <i><b>Updated.</b></i><br><br>
-    Leave a message:<br>  
-    <input type="text" ng-model="newMessage"><br><br>
-    or not<br>
-    <input type="text" ng-model="altmessages">
+    Add a task:<br>  
+    <input type="text" ng-model="newMessage">
     <input type="submit" ng-click="add()" value="add">
     <br><br>
-    Messages: <br>
+    To-do: <br>
     <ul>
       <li ng-repeat="message in messages">
         {{message}}
